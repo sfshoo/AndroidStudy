@@ -18,21 +18,29 @@ import okhttp3.Response;
 
 public class OkHttpUtil {
     private static final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
+    private static String Url, Body;
 
-    public static void post(String url, String body) {
+    public static void config(String url, String body) {
+        Url = url;
+        Body = body;
+    }
+
+    public static String post(String url, String body) throws IOException {
         Request request = new Request.Builder().url(url).post(RequestBody.create(body, JSON)).build();
         OkHttpClient client = new OkHttpClient();
         Call call = client.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.e("net.OkHttpUtil.post", "Request Failed");
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.e("net.OkHttpUtil.post", "Request Failed :" + response.body().string());
-            }
-        });
+        return call.execute().body().string();
+//        call.enqueue(new Callback() {
+//            @Override
+//            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+//                Log.e("net.OkHttpUtil.post", "Request Failed");
+//
+//            }
+//
+//            @Override
+//            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+//                Log.e("net.OkHttpUtil.post", "Request Failed :" + response.body().string());
+//            }
+//        });
     }
 }
