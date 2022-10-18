@@ -2,26 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
 
     <TextView
         android:id="@+id/main"
-        android:layout_width="80dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="160dp"
         android:gravity="center"
-        android:text="Welcom" />
+        android:text="Welcom"
+        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/jump_to_login"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="160dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="跳转登录" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/jump_to_login"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="跳转登录"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/jump_to_about_me"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="关于我们"
+            android:textSize="20sp" />
+    </LinearLayout>
 </LinearLayout>

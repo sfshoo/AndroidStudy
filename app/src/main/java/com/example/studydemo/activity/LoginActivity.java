@@ -1,7 +1,6 @@
-package com.example.studydemo;
+package com.example.studydemo.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.studydemo.R;
 import com.example.studydemo.domain.vo.LoginBean;
 import com.example.studydemo.domain.vo.LoginResponse;
 import com.example.studydemo.util.OkHttpUtil;

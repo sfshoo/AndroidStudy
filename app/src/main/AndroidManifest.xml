@@ -15,7 +15,7 @@
         android:theme="@style/Theme.StudyDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.studydemo.LoginActivity" />
+        <activity android:name="com.example.studydemo.activity.LoginActivity" />
+        <activity android:name="com.example.studydemo.activity.AboutMeActivity" />
     </application>
 
 </manifest>

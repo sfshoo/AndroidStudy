@@ -1,4 +1,4 @@
-package com.example.studydemo;
+package com.example.studydemo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
+import com.example.studydemo.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button jumpToLogin;
+    private Button jumpToAboutMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i("study", "[MainActivity -> onCreate]");
         jumpToLogin = findViewById(R.id.jump_to_login);
+        jumpToAboutMe = findViewById(R.id.jump_to_about_me);
         jumpToLogin.setOnClickListener(jumpToLogin());
+        jumpToAboutMe.setOnClickListener(jumpToAboutMe());
     }
 
     @Override
@@ -54,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener jumpToLogin() {
         return view -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        };
+    }
+
+    private View.OnClickListener jumpToAboutMe() {
+        return view -> {
+            Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
             startActivity(intent);
         };
     }
